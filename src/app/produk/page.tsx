@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 const packages = [
   {
-    name: 'Starter',
+    name: 'Basic',
     tagline: 'Cocok untuk bisnis yang baru memulai.',
-    price: '1.000.000',
+    price: '100.000',
     priceNote: 'sekali bayar',
     duration: '5–7 hari kerja',
     color: 'border-border',
@@ -22,9 +22,9 @@ const packages = [
     notIncluded: ['CMS / panel admin', 'Integrasi pembayaran', 'Multi bahasa'],
   },
   {
-    name: 'Business',
+    name: 'Pro',
     tagline: 'Solusi lengkap untuk bisnis berkembang.',
-    price: '5.000.000',
+    price: '500.000',
     priceNote: 'sekali bayar',
     duration: '10–14 hari kerja',
     color: 'border-accent',
@@ -79,7 +79,7 @@ const addons = [
 const faqs = [
   {
     q: 'Berapa lama proses pengembangan website?',
-    a: 'Tergantung paket yang dipilih. Starter: 5–7 hari kerja, Business: 10–14 hari kerja, Enterprise: 30–60 hari kerja. Estimasi ini berlaku setelah semua materi konten dari klien tersedia.',
+    a: 'Tergantung paket yang dipilih. Basic: 5–7 hari kerja, Pro: 10–14 hari kerja, Enterprise: 30–60 hari kerja. Estimasi ini berlaku setelah semua materi konten dari klien tersedia.',
   },
   {
     q: 'Apakah saya bisa request desain custom?',
@@ -91,7 +91,7 @@ const faqs = [
   },
   {
     q: 'Apakah website bisa dikelola sendiri setelah jadi?',
-    a: 'Untuk paket Business dan Enterprise, kami menyediakan panel CMS yang mudah digunakan. Kami juga memberikan training penggunaan dan dokumentasi yang lengkap.',
+    a: 'Untuk paket Pro dan Enterprise, kami menyediakan panel CMS yang mudah digunakan. Kami juga memberikan training penggunaan dan dokumentasi yang lengkap.',
   },
   {
     q: 'Bagaimana jika saya tidak puas dengan hasilnya?',

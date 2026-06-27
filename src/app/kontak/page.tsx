@@ -10,13 +10,12 @@ const contactInfo = [
       </svg>
     ),
     label: 'WhatsApp',
-    value: '+6285233483939',
+    value: '+6282132531836',
     sublabel: 'Respon cepat, Senin–Sabtu 08.00–21.00 WIB',
     bg: 'bg-green-500/10',
     border: 'border-green-500/20',
     hoverBorder: 'hover:border-green-500/40',
-    
-    ctaColor: 'bg-green-500 hover:bg-green-600',
+    href: 'https://wa.me/6282132531836',
   },
   {
     icon: (
@@ -25,13 +24,28 @@ const contactInfo = [
       </svg>
     ),
     label: 'Email',
-    value: 'webinstan_cihuy@gmail.com',
+    value: 'webinstanstudio@gmail.com',
     sublabel: 'Untuk pertanyaan detail dan pengiriman brief proyek.',
     bg: 'bg-accent/10',
     border: 'border-accent/20',
     hoverBorder: 'hover:border-accent/40',
-    
-    
+    href: 'mailto:webinstanstudio@gmail.com',
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+      </svg>
+    ),
+    label: 'Instagram',
+    value: '@webinstanstudio',
+    sublabel: 'Follow kami untuk info menarik dan portofolio terbaru.',
+    bg: 'bg-pink-500/10',
+    border: 'border-pink-500/20',
+    hoverBorder: 'hover:border-pink-500/40',
+    href: 'https://www.instagram.com/webinstanstudio/',
   },
 ];
 
@@ -55,7 +69,7 @@ export default function KontakPage() {
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
     const msg = `Halo WebCraft Studio! 👋\n\nSaya ingin konsultasi mengenai proyek website.\n\n*Nama:* ${form.name}\n*Email:* ${form.email}\n*No. HP:* ${form.phone}\n*Layanan:* ${form.service}\n*Budget:* ${form.budget}\n*Detail Proyek:*\n${form.message}`;
-    window.open(`https://wa.me/6285233483939?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/6282132531836?text=${encodeURIComponent(msg)}`, '_blank');
     setSubmitted(true);
   };
 
@@ -89,8 +103,14 @@ export default function KontakPage() {
               </p>
             </div>
 
-            {contactInfo.map(({ icon, label, value, sublabel, bg, border, hoverBorder, ctaColor }) => (
-              <div key={label} className={`card-glass border ${border} ${hoverBorder} p-6 transition-all duration-300`}>
+            {contactInfo.map(({ icon, label, value, sublabel, bg, border, hoverBorder, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block card-glass border ${border} ${hoverBorder} p-6 transition-all duration-300`}
+              >
                 <div className="flex items-center gap-3 mb-3">
                   <div className={`w-10 h-10 rounded-xl ${bg} border ${border} flex items-center justify-center flex-shrink-0`}>
                     {icon}
@@ -100,8 +120,8 @@ export default function KontakPage() {
                     <div className="text-accent-light text-sm font-medium">{value}</div>
                   </div>
                 </div>
-                <p className="text-text-secondary text-xs leading-relaxed mb-4">{sublabel}</p>
-              </div>
+                <p className="text-text-secondary text-xs leading-relaxed">{sublabel}</p>
+              </a>
             ))}
 
             {/* Jam Kerja */}
@@ -224,7 +244,7 @@ export default function KontakPage() {
                   <div>
                     <label className="block text-text-secondary text-xs font-medium mb-2">Estimasi Budget</label>
                     <div className="flex flex-wrap gap-2">
-                      {['< Rp 1 juta', 'Rp 1–5 juta', '> Rp 5–10 juta', '> Rp 10 juta', 'Belum tahu'].map((b) => (
+                      {['< Rp 100 rb', 'Rp 100 rb – 500 rb', 'Rp 500 rb – 2 jt', '> Rp 2 jt', 'Belum tahu'].map((b) => (
                         <button
                           key={b}
                           type="button"
